@@ -34,18 +34,18 @@ features_test = features_test.fillna(0)
 cv = KFold(n_splits=5, shuffle=True)
 cv.get_n_splits(X)
 
-#Определение оптимального количества деревьев
+# Определение оптимального количества деревьев
 
-# numbers = [10, 20, 30, 40, 50, 100]
-# for n in numbers:
-#     print(n)
-#     gradient = GradientBoostingClassifier(n_estimators=n, random_state=241)
-#     start_time = datetime.datetime.now()
-#
-#     scores = cross_val_score(gradient, X, y, cv=cv, scoring='roc_auc')
-#
-#     print('Time elapsed:', datetime.datetime.now() - start_time)
-#     print(np.mean(scores))
+numbers = [10, 20, 30, 40, 50, 100]
+for n in numbers:
+    print(n)
+    gradient = GradientBoostingClassifier(n_estimators=n, random_state=241)
+    start_time = datetime.datetime.now()
+
+    scores = cross_val_score(gradient, X, y, cv=cv, scoring='roc_auc')
+
+    print('Time elapsed:', datetime.datetime.now() - start_time)
+    print(np.mean(scores))
 
 #Функция для определения оптимального параметра регуляризации
 def logreg (X, y):
